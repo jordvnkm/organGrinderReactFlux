@@ -1,0 +1,48 @@
+
+
+.noteKey {
+  display: block;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border: 1px solid grey;
+  color: black;
+
+}
+
+.playing {
+  background: yellow;
+}
+
+#C5.notPlaying {
+  background: pink;
+}
+
+
+
+#D5.notPlaying {
+  background: lightblue;
+}
+
+#E5.notPlaying {
+  background: lightgreen;
+}
+
+
+#G5.notPlaying {
+  background: teal;
+}
+
+#A5.notPlaying {
+  background: lightgrey;
+}
+
+#B5.notPlaying {
+  background: magenta;
+}
+
+#C6.notPlaying {
+  background: red;
+}

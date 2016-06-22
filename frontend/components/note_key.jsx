@@ -4,6 +4,9 @@ const Note = require("../util/note");
 const KeyStore = require("../stores/key_store");
 
 const NoteKey = React.createClass({
+  getInitialState: function(){
+    return {playingState: "notPlaying"};
+  }, 
   componentDidMount: function(){
     let frequency = TONES[this.props.noteName];
     this.note = new Note(frequency);
@@ -14,8 +17,10 @@ const NoteKey = React.createClass({
     let notes = KeyStore.all();
     if (notes.includes(this.props.noteName)){
       this.note.start();
+      this.setState({playingState: "playing"})
     } else {
       this.note.stop();
+      this.setState({playingState: "notPlaying"})
     }
   },
 
@@ -24,8 +29,10 @@ const NoteKey = React.createClass({
   },
 
   render: function(){
+    let classname = "noteKey " + this.state.playingState;
+    console.log(classname);
     return (
-      <div>{this.props.noteName}</div>
+      <div className={classname}  id={this.props.noteName}>{this.props.noteName}</div>
     )
   }
 });
